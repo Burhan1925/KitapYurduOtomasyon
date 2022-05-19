@@ -57,6 +57,7 @@ public class Methods {
     }
 
     public void click(By by) {
+        scrollWithAction(by);
         findElement(by).click();
     }
 

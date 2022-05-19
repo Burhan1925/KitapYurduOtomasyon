@@ -23,7 +23,7 @@ public class FavoritesPage {
         boolean favoriteCheck = false;
         List<WebElement> product = methods.getProducts(By.xpath("//*[@class='fa fa-heart']"));
         methods.waitBySeconds(1);
-        for (int i = 8; i <= 11; i++) {
+        for (int i = 3; i < 7; i++) {
             methods.scrollWithAction(product.get(i));
             product.get(i).click();
             methods.waitBySeconds(1);
@@ -41,6 +41,9 @@ public class FavoritesPage {
         methods.clickWithText("a", "Favorilerim");
         methods.waitBySeconds(5);
         logger.info("Favoriler sayfasına giriş yapıldı.");
+        if(methods.isElementVisible(By.cssSelector(".sprite.sprite-icon-list"))) {
+            methods.click(By.cssSelector(".sprite.sprite-icon-list"));
+        }
     }
     public void deleteFavorite()
     {
